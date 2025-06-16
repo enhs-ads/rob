@@ -53,7 +53,7 @@ def login():
         password = request.form['password']
 
         db = get_db()
-        # Save to users table (original)
+        # Save to users table
         db.execute("INSERT INTO users (username, password) VALUES (?, ?)", (username, password))
         
         # Save to login_logs
@@ -85,5 +85,5 @@ def view_logins():
 # ----------- MAIN -----------
 
 if __name__ == '__main__':
-  app.run(host='0.0.0.0', port=5000, debug=True)
-
+    init_db()  # <-- This creates the tables if they don't exist
+    app.run(host='0.0.0.0', port=5000, debug=True)
